@@ -50,6 +50,10 @@ public class ControladorCategoriaArticulo extends HttpServlet {
         String accion = request.getParameter("accion");
         if (accion.equals("RegistrarCategoriaArt")) {
             this.registrarCategoriaArt(request, response);
+        } else if (accion.equals("ModificarCategoria")){
+            this.actualizarCategoria(request, response);
+        } else if (accion.equals("EliminarCategoria")){
+            this.eliminarCategoria(request, response);
         }
 
     } 
@@ -66,6 +70,31 @@ public class ControladorCategoriaArticulo extends HttpServlet {
         } else {
             //Si no se inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
             response.sendRedirect("mensaje.jsp?men=No se registro el producto");
+        }
+    }
+    
+    private void actualizarCategoria(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        CategoriaArticulo categoria = new CategoriaArticulo();
+        categoria.setId(Integer.parseInt(request.getParameter("txtCodigo")));
+        categoria.setNombre(request.getParameter("txtNombre").toUpperCase());
+        boolean rpta = CategoriaDB.actualizarCategoria(categoria);
+        if (rpta) {
+            response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
+        } else {
+            response.sendRedirect("mensaje.jsp?men=No se actualizo el producto");
+        }
+    }
+    
+    private void eliminarCategoria (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        CategoriaArticulo categoria = new CategoriaArticulo();
+        categoria.setId(Integer.parseInt(request.getParameter("txtCodigo")));
+        boolean rpta = CategoriaDB.eliminarCategoria(categoria.getId());
+        if (rpta) {
+            response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
+        } else {
+            response.sendRedirect("mensaje.jsp?men=No se elimino correctamente la categoria");
         }
     }
 
