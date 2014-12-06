@@ -19,7 +19,6 @@
     <body>
         <div>
             <a href="index.jsp">Inicio</a>
-            <a href="registrarCategoria.jsp">Registrar Categoria</a>
         </div>
         <br >
         <%-- En el action del formulario le decimos que llama al Controlador --%>
