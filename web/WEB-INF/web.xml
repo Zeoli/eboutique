@@ -4,9 +4,25 @@
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <servlet-class>Controlador.ControladorCategoriaArticulo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorArticulo</servlet-name>
+        <servlet-class>Controlador.ControladorArticulo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorStock</servlet-name>
+        <servlet-class>Controlador.ControladorStock</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorArticulo</servlet-name>
+        <url-pattern>/ControladorArticulo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorStock</servlet-name>
+        <url-pattern>/ControladorStock</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
