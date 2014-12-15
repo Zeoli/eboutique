@@ -24,6 +24,7 @@
             <a href="registrarCategoria.jsp">Registrar Categoria</a> |
             <a href="registrarArticulo.jsp">Registrar Articulo</a> |
             <a href="registrarStock.jsp">Registrar Stock</a> |
+            <a href="registrarRol.jsp">Registrar Rol</a> |
             <input type="text" name="txtbusqueda " > <td><input type="submit" value="Buscar" name="btnBuscar" /></td>
         </div>
             
@@ -173,6 +174,40 @@
 
             </table>
         </div>
+        <br >
+        
+        <div>
+            <table border="1">
+                <tr style="background-color: chocolate">
+                    <td colspan="4">Lista de Roles</td>
+
+                </tr>
+                <tr style="background-color: chocolate">
+                    <td>Codigo</td>
+                    <td>Nombre</td>
+                    <td>Proceso</td>
+                    <td>Proceso</td>
+                </tr>
+                <%-- Lista de todos los productos --%>
+                <%
+                            ArrayList<Rol> listaRol = RolDB.obtenerRol();
+                            for (Rol rol : listaRol) {
+                %>
+                <tr>
+                    <td><%= rol.getId()%></td>
+                    <td><%= rol.getNombre()%></td>
+                    <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
+                    <td><a href="actualizarRol.jsp?id=<%= rol.getId()%>">Modificar</a>
+                    </td>
+                    <td><a href="eliminarRol.jsp?id=<%= rol.getId()%>">Eliminar</a>
+                    </td>
+                </tr>
+                <%
+                            }
+                %>
+            </table>
+        </div>
+            
         <br >
         
         <div>
