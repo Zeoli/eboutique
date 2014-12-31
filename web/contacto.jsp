@@ -51,7 +51,9 @@
                 <!-- CONTENIDO -->
             <div class="contenido">
                 <div id="division"></div>
-                <div class="imagen-contacto"></div>
+                <div class="imagen-contacto">
+                    <img src="img/contacto.jpg">
+                </div>
                 <div class="form-contacto">
                     <div id="datos-empresa">
                         <p>Contactanos:</p>

@@ -8,6 +8,12 @@
     border-width: 1px;
 }
 
+.imagen-contacto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .form-contacto {
     float: left;
     width: 40%;

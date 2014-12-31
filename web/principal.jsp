@@ -129,15 +129,23 @@
                         </div>
                         <div id="cont">
                             <div id="muestras">
-                                <div id="muestra"></div>
-                                <div id="muestra"></div>
+                                <div id="muestra">
+                                    <img src="img/ropa/1.png">
+                                </div>
+                                <div id="muestra">
+                                    <img src="img/ropa/2.png">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div id="panel-derecho">
                         <div id="muestras">
-                            <div id="muestra"></div>
-                            <div id="muestra"></div>
+                            <div id="muestra">
+                                <img src="img/ropa/2.png">
+                            </div>
+                            <div id="muestra">
+                                <img src="img/ropa/1.png">
+                            </div>
                         </div>
                     </div>
                 </div>
