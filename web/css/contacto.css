@@ -1,0 +1,133 @@
+.imagen-contacto {
+    float: left;
+    width: 40%;
+    height: 30em;
+    margin: 0 0 0 4em;
+    padding: 0 0 0 0;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.form-contacto {
+    float: left;
+    width: 40%;
+    height: 30em;
+    margin: 0 0 0 4em;
+    padding: 0 0 0 0;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#datos-empresa {
+    float: left;
+    width: 100%;
+    height: 10em;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+    opacity: 0.7;
+}
+
+#datos-empresa p {
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 0 0 0 0;
+    margin: 1em 0 0 2em;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#datos-empresa h5 {
+    color: black;
+    text-align: left;
+    padding: 0 0 0 0;
+    margin: 0 0 0 4em;
+    font-weight: bold;
+}
+
+#links {
+    float: left;
+    width: 88%;
+    height: 3em;
+    margin: 0 0 0 0;
+    padding: 0 0 0 3em;
+    background-color: #ffffff;
+    opacity: 0.7;
+}
+
+#links img {
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 0.5em;
+    padding: 0 0 0 0;
+    opacity: 1;
+}
+
+#form-contact {
+    float: left;
+    width: 100%;
+    height: 15em;
+    margin: 0 0 0 0;
+    padding: 2em 0 0 0;
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+
+#formulario-contacto {
+    float: left;
+    width: 80%;
+    height: 90%;
+    margin: 0 2.5em 1em 2.5em;
+    padding: 0 0 0 0;   
+}
+
+#forma label {
+    float: left;
+    width: 97%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 0.8em;
+    
+}
+
+#forma #entrada {
+    float: left;
+    width: 97%;
+    height: 2em;
+    color: white;
+    padding: 0 0 0 0.5em;
+    margin: 1em 0 0 0;
+    background-color: #666666;
+    margin: 0.5em 0 0 0;
+}
+
+#forma textArea {
+    float: left;
+    width: 97%;
+    color: white;
+    padding: 0 0 0 0.5em;
+    margin: 1em 0 0 0;
+    background-color: #666666;
+    margin: 0.5em 0 0 0;
+}
+
+#mensaje-error {
+    float: left;
+    width: 70%;
+    height: 2em;
+    background-color: #ffffff;
+}
+
+#btn-enviar {
+    float: right;
+    width: 20%;
+    height: 2em;
+    margin: 0.5em 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #006666;
+    color: white;
+}
+
+
