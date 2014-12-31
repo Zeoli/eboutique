@@ -50,8 +50,27 @@
                 <!-- CONTENIDO -->
             <div class="contenido">
                 <div class="galerias">
-                    <div id="panel-izquierdo"></div>
-                    <div id="panel-derecho"></div>
+                    <div id="panel-izquierdo">
+                        <div id="encabezado">
+                            <p id="titulo">
+                                <span>Productos de temporada:</span>
+                            </p>
+                        </div>
+                        <div id="galery">
+                            <div id="galeria_imagen">
+                                <img id="imgGaleria" src="img/ropa/1.png" />
+                            </div>
+                        </div>
+                        <div id="galeria_miniaturas">
+                            <img class="miniatura" onclick="javascript:document.getElementById('imgGaleria').src=this.src;" src="img/ropa/1.png" />
+                            <img class="miniatura" onclick="javascript:document.getElementById('imgGaleria').src=this.src;" src="img/ropa/2.png" />
+                        </div>
+                    </div>
+                    <div id="panel-derecho">
+                        <div id="galeria-derecha">
+                            <img src="img/ropa/3.png">
+                        </div>
+                    </div>
                 </div>
                 
                 <div id="division"></div>
@@ -67,9 +86,36 @@
                 </div>
                 
                 <div class="advertasing">
-                    <div id="seccion"></div>
-                    <div id="seccion"></div>
-                    <div id="seccion"></div>
+                    <div id="seccion">
+                        <div id="texto-seccion">
+                            <p>
+                                <span>ESTRENA CON</span> <br />
+                                <span>LO NUEVO</span> <br />
+                                <span>DE LA TEMPORADA</span> <br />
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div id="seccion">
+                        <div id="texto-seccion">
+                            <p>
+                                <span>NUEVOS</span> <br />
+                                <span>ACCESORIOS</span> <br />
+                                <span>DE TEMPORADA</span> <br />
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div id="seccion">
+                        <div id="texto-seccion">
+                            <p>
+                                <span>ENVIOS GRATUITOS</span> <br />
+                                <span>EN COMPRAS</span> <br />
+                                <span>MAYORES DE $50</span> <br />
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
                 </div>
                 
                 <div id="division"></div>
