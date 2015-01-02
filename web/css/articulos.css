@@ -1,0 +1,59 @@
+.main-admin table{
+    table-layout: fixed;
+    width: 90%;
+    margin: 1em 1em 1em 1em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #006666;
+}
+
+.main-admin th {
+    table-layout: fixed;
+    margin: 0 0 0 0;
+    padding: 0 0.5em 0 0.5em;
+    border-style: hidden;
+}
+
+.main-admin tr td {
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-admin img {
+    float:left;
+    margin: 0 0 0 1em;
+    width: 30px;
+    height: 30px;
+}
+
+#mark-precio {
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 0 0 0 2em;
+    text-align: left;
+}
+#datos {
+    display: block;
+    float: left;
+    width: 40%;
+    text-align: right;
+    font-weight: bold;
+}
+
+#agregar {
+    float: left;
+    width: 20%;
+    margin: 1em 2em 1em 1em;
+    padding: 0.2em 0 0.2em 0;
+    color: black;
+    text-align: center;
+    border-color: #393f43;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+}
+
+#agregar:hover {
+    background-color: #ffff99;
+}

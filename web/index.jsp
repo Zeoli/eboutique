@@ -26,6 +26,7 @@
             <a href="registrarStock.jsp">Registrar Stock</a> |
             <a href="registrarRol.jsp">Registrar Rol</a> |
             <a href="principal.jsp">Pagina del usuario</a> |
+            <a href="admin.jsp">Pagina del admin</a> |
             <input type="text" name="txtbusqueda " > <td><input type="submit" value="Buscar" name="btnBuscar" /></td>
         </div>
             

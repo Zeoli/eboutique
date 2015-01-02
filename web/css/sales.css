@@ -1,0 +1,33 @@
+.main-admin table{
+    table-layout: fixed;
+    width: 90%;
+    margin: 1em 1em 1em 1em;
+    border-color: #006666;
+}
+
+.main-admin th {
+    table-layout: fixed;
+    margin: 0 0 0 0;
+    padding: 0 0.5em 0 0.5em;
+}
+
+.main-admin tr td {
+    text-align: center;
+    font-weight: bold;
+}
+#mark-precio {
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 0 0 0 2em;
+    text-align: left;
+}
+#datos {
+    display: block;
+    float: left;
+    width: 40%;
+    text-align: right;
+    font-weight: bold;
+}
+
+
