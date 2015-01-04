@@ -51,7 +51,7 @@
                     <div id="marco">
                         <div id="encabezado">
                             <p id="titulo">
-                                <span>Articulos</span>
+                                <span>Categorias</span>
                             </p>
                         </div>
                     </div>

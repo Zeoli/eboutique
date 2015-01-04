@@ -86,7 +86,7 @@ body {
     padding: 1.5em 1em 0.5em 0;
 }
 
-.bienvenida a {
+#sesion {
     float: right;
     margin: 0 2em 0 0;
     padding: 0 0 0 0;
@@ -95,6 +95,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
+    border-style: none;
+    background-color: transparent;
 }
 
 .options {
@@ -490,6 +492,24 @@ body {
     width: 100%;
     height: 100%;
     opacity: 1;
+}
+
+#registro {
+    display: table;
+    table-layout: fixed;
+}
+
+#campos {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#submit {
+    display: block;
+    float: right;
+    margin: 1em 0 0 0;
+    width: 40%;
 }
 .clear{
     clear: both;

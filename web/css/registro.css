@@ -1,0 +1,62 @@
+.registro-box {
+    float: left;
+    width: 80%;
+    margin: 0 0 0 6em;
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+
+#form-registro {
+    display: block;
+    width: 80%;
+    margin: 2em 2em 2em 5em;
+}
+
+#labels {
+    float: left;
+    width: 30%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+#inputs {
+    float: left;
+    width: 70%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+#form-registro legend {
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 1em;
+}
+
+#form-registro label {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0 0 0;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 1.1em;
+}
+
+#form-registro input {
+    display: block;
+    width: 100%;
+    height: 1.3em;
+    margin: 0.5em 0 0 0;
+}
+
+#form-registro button {
+    display: block;
+    float: right;
+    width: 20%;
+    height: 3em;
+    margin: 1em 2em 1em 0;
+    font-style: oblique;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: #99ccff;
+    opacity: 1;
+}
+

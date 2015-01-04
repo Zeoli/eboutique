@@ -11,6 +11,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/contacto.css">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        <script src="javascript/dialog.js" type="text/javascript"></script>
         <title>Index</title>
     </head>
     <body>
@@ -31,7 +35,7 @@
                     </div>
                     <div class="user">
                         <div class="bienvenida">
-                            <a href="#">Inicia Sesión/Registrate</a>
+                            <input id="sesion" value="Iniciar Sesión/Registrarse" type="button" />
                         </div>
                     </div>
                     <div class="options">
@@ -110,6 +114,17 @@
             <hr id="internal-row">
             
             <div id="division"></div>
+        </div>
+        
+        <div id="dialog">
+            <form id="registro" action="" method="post">
+                <label>Usuario:</label> <br />
+                <input id="campos" name="usuario" type="text">
+                <label>Password:</label> <br />
+                <input id="campos" name="password" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+            <p><a id="id_register_link" href="registro.jsp" class="nooverlay">Crear Una Cuenta</a></p>
         </div>
     </body>
 </html>

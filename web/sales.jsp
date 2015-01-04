@@ -58,17 +58,23 @@
                 </div>
                 <div class="main-admin">
                     <table>
-                        <th><span>Codigo de Compra</span> <hr id="row"> </th>
+                        <th><span>Código</span> <hr id="row"> </th>
                         <th><span>Cliente</span> <hr id="row"> </th>
                         <th><span>Productos</span> <hr id="row"> </th>
+                        <th><span>Precio</span> <hr id="row"> </th>
+                        <th><span>Cantidad</span> <hr id="row"> </th>
                         <th><span>Total</span> <hr id="row"> </th>
                         <tr>
+                            <td>a</td>
+                            <td>a</td>
                             <td>a</td>
                             <td>s</td>
                             <td>d</td>
                             <td><span id="mark-precio">$</span><span id="datos">10.00</span></td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td><hr id="row"><span>Total</span></td>

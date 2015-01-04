@@ -58,6 +58,7 @@
                 </div>
                 <div class="main-admin">
                     <a href="#" id="agregar">Agregar Artículo</a>
+                    <a href="#" id="agregar">Agregar Almacen</a>
                     <br />
                     <table>
                         <th>Código Artículo <hr id="row"></th>

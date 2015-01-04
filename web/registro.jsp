@@ -1,6 +1,6 @@
 <%-- 
-    Document   : carrito
-    Created on : 30/12/2014, 05:38:21 PM
+    Document   : registro
+    Created on : 2/01/2015, 11:48:47 PM
     Author     : Toni
 --%>
 
@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" type="text/css" href="css/categorias.css">
-        <link rel="stylesheet" type="text/css" href="css/carrito.css">
+        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        
         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
@@ -55,24 +55,43 @@
             
                 <!-- CONTENIDO -->
             <div class="contenido">
-                <div id="superior">
-                    <div id="marco">
-                        <div id="encabezado">
-                            <p id="titulo">
-                                <span>Carrito:</span>
-                            </p>
-                        </div>
-                    </div>
+                <div class="registro-box">
+                    <form id="form-registro" method="POST" acction="">
+                        <fieldset>
+                            <legend>Datos de Perfil</legend>
+                            <div id="labels">
+                                <label>Nombre Completo:</label>
+                                <label>Apellidos:</label>
+                                <label>Edad:</label>
+                                <label>Nombre de Usuario:</label>
+                                <label>Contraseña:</label>
+                                <label>Correo electrónico:</label>
+                            </div>
+                            <div id="inputs">
+                                <input type="text" placeholder="Nombre" name="Nombre" />
+                                <input type="text" placeholder="Apellidos" name="Apellidos" />
+                                <input type="text" placeholder="Edad" name="Edad" />
+                                <input type="text" placeholder="Username" name="Username" />
+                                <input type="password" placeholder="******" name="Password" />
+                                <input type="text" placeholder="Email" name="Email" />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Datos Perfonales</legend>
+                            <div id="labels">
+                                <label>Dirección:</label>
+                                <label>Ciudad:</label>
+                                <label>C.P.</label>
+                            </div>
+                            <div id="inputs">
+                                <input type="text" placeholder="Dirección" name="Direccion" />
+                                <input type="text" placeholder="Ciudad" name="Ciudad" />
+                                <input type="text" placeholder="Código Postal" name="CP"/>
+                            </div>
+                        </fieldset>
+                        <button type="submit">Registrarse</button>
+                    </form>
                 </div>
-                <div class="carrito-box">
-                    <div id="division"></div>
-                    <div id="mensaje-carrito">
-                        <span>Tu carrito está vacio</span>
-                    </div>
-                    <img src="img/carrito.png">
-                    <div id="division"></div>
-                </div>
-                <div id="division"></div>
                 <!-- Contenido -->
             </div>
             
