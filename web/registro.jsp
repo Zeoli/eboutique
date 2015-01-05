@@ -77,7 +77,7 @@
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend>Datos Perfonales</legend>
+                            <legend>Datos Personales</legend>
                             <div id="labels">
                                 <label>Dirección:</label>
                                 <label>Ciudad:</label>
