@@ -31,7 +31,7 @@
                 <div class="menu-header-admin">
                     <div class="user">
                         <div class="bienvenida">
-                            <a href="#">Bienvenido Administrador</a>
+                            <a href="">Bienvenido Administrador</a>
                         </div>
                     </div>
                     <div class="options">
