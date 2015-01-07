@@ -18,7 +18,7 @@ public class Articulo {
     
     public Articulo(){}
     
-    public Articulo(int id, String nombre, String descripcion, float precio, int idCategoria) {
+    public Articulo(int id,  String nombre, String descripcion, float precio, int idCategoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

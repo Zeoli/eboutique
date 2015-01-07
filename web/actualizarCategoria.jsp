@@ -15,39 +15,83 @@
 <%
     CategoriaArticulo categoria = CategoriaDB.obtenerCategoria(Integer.parseInt(request.getParameter("id")));
 %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/categorias.css">
+        <link rel="stylesheet" type="text/css" href="css/admin.css">
+        <link rel="stylesheet" type="text/css" href="css/articulos.css">
+        <title>Index</title>
     </head>
     <body>
-        <div>
-            <a href="index.jsp">Inicio</a>
-        </div>
-        <br >
-        <%-- En el action del formulario le decimos que llama al Controlador --%>
-        <form method="post" action="ControladorCategoriaArticulo">
-            <div>
+        <div class="contenedor">
+            <hr id="row">
+            
+                <!-- HEADER -->
+            <div class="header">
+                <hr id="internal-row">
+                <div class="clear"></div>
+                <div class="logo"></div>
+                <div id="vertical"></div>
+                <div class="menu-header-admin">
+                    <div class="user">
+                        <div class="bienvenida">
+                            <a href="#">Bienvenido Administrador</a>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <ul id="menu">
+                            <li><a href="users.jsp">Usuarios</a></li>
+                            <li><a href="category.jsp">Categorias</a></li>
+                            <li><a href="articulos.jsp">Articulos</a></li>
+                            <li><a href="sales.jsp">Ventas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="div-header"></div>
+            
+                <!-- CONTENIDO -->
+           
+            <form method="post" action="ControladorCategoriaArticulo">
+            <div class="main-admin">
                 <%-- Indica al controlador que vamos hacer una modificacion --%>
                 <input type="hidden" name="accion" value="ModificarCategoria" />
                 <table border="1">
+                    <th>Código <hr id="row"></th>
+                     <th>Nombre<hr id="row"></th>   
                     <tr>
-                        <td>Codigo</td>
-                        <%-- Escribimos el codigo del producto a modificar --%>
-                        <td><input type="text" name="txtCodigo" value="<%= categoria.getId()%>" readonly /></td>
-                    </tr>
-                    <tr>
-                        <td>Nombre</td>
-                        <%-- Escribimos el nombre del producto a modificar --%>
+                       <td><input type="text" name="txtCodigo" value="<%= categoria.getId()%>" readonly /></td>
                         <td><input type="text" name="txtNombre" value="<%= categoria.getNombre()%>" /></td>
+                       
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value="Actualizar" name="btnActualizar" /></td>
-                    </tr>
+                    
+                  
                 </table>
+                
             </div>
+                        <br />
+                        <input align="center" type="submit" value="Actualizar" name="btnActualizar" />
         </form>
-
+                <!-- Contenido -->
+            </div>
+            
+                <!-- FOOTER -->
+            <div class="div-footer"></div>
+            
+            <div class="footer">
+                <div class="sign"></div>
+                <div id="vertical"></div>
+            </div>
+            <hr id="row">
+            
+            <hr id="internal-row">
+            
+            <div id="division"></div>
+        </div>
     </body>
 </html>
-

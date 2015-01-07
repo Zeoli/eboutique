@@ -3,6 +3,9 @@
     Created on : 2/01/2015, 12:18:16 PM
     Author     : Toni
 --%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.*" %>
+<%@page import="java.util.*" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,6 +49,7 @@
             <div class="div-header"></div>
             
                 <!-- CONTENIDO -->
+           
             <div class="contenido">
                 <div id="superior">
                     <div id="marco">
@@ -63,14 +67,24 @@
                         <th>Código Categoria <hr id="row"></th>
                         <th>Nombre Categoría <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
+                        <%
+                            ArrayList<CategoriaArticulo> lista = CategoriaDB.obtenerCategoria();
+                            for (CategoriaArticulo categoria : lista) {
+                        %>
                         <tr>
-                            <td>1</td>
-                            <td>ropa</td>
-                            <td><img src="img/edit.png"><img src="img/delete.png"><img src="img/detalle.png"></td>
+                            <td><%= categoria.getId()%></td>
+                            <td><%= categoria.getNombre()%></td>
+                            <td><a href="actualizarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/edit.png"></a>
+                                <a href="eliminarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/delete.png"></a>
+                                <img src="img/detalle.png"></td>
                         </tr>
+                       <%
+                            }
+                %>
                     </table>
                 </div>
                 <div id="division"></div>
+                 
                 <!-- Contenido -->
             </div>
             
