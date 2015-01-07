@@ -3,9 +3,6 @@
     Created on : 2/01/2015, 12:18:16 PM
     Author     : Toni
 --%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.*" %>
-<%@page import="java.util.*" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -67,15 +64,11 @@
                         <th>Código Categoria <hr id="row"></th>
                         <th>Nombre Categoría <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
-                        <%
-                            ArrayList<CategoriaArticulo> lista = CategoriaDB.obtenerCategoria();
-                            for (CategoriaArticulo categoria : lista) {
-                        %>
                         <tr>
-                            <td><%= categoria.getId()%></td>
-                            <td><%= categoria.getNombre()%></td>
-                            <td><a href="actualizarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/edit.png"></a>
-                                <a href="eliminarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/delete.png"></a>
+                            <td></td>
+                            <td></td>
+                            <td><a href=""><img src="img/edit.png"></a>
+                                <a href=""><img src="img/delete.png"></a>
                                 <img src="img/detalle.png"></td>
                         </tr>
                        <%

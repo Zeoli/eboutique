@@ -3,9 +3,6 @@
     Created on : 1/01/2015, 11:35:56 PM
     Author     : Toni
 --%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.*" %>
-<%@page import="java.util.*" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -71,22 +68,16 @@
                         <th>Precio <hr id="row"></th>
                         <th>Categoria <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
-                        
-                        <%
-                          
-                            ArrayList<Articulo> listaArticulo = ArticuloDB.obtenerArticulo();
-                            for (Articulo articulo : listaArticulo) {
-                %>
                 <tr>
-                    <td><%= articulo.getId()%></td>
+                    <td></td>
                    
-                    <td><%= articulo.getNombre()%></td>
-                    <td><%= articulo.getDescripcion()%></td>
-                    <td><span id="mark-precio">$</span><%= articulo.getPrecio()%></td>
-                    <td><%= articulo.getCategoria()%></td>
+                    <td></td>
+                    <td></td>
+                    <td><span id="mark-precio">$</span></td>
+                    <td></td>
                     <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
-                    <td><a href="actualizarArticulo.jsp?id=<%= articulo.getId()%>"><img src="img/edit.png"></a>
-                    <a href="eliminarArticulo.jsp?id=<%= articulo.getId()%>"><img src="img/delete.png"></a>
+                    <td><a href=""><img src="img/edit.png"></a>
+                    <a href=""><img src="img/delete.png"></a>
                     </td>
                 </tr>
                 <%
