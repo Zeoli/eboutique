@@ -12,9 +12,9 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/registro.css">
         
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <script src="javascript/jquery.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
         <script src="javascript/dialog.js" type="text/javascript"></script>
         <title>Index</title>
     </head>

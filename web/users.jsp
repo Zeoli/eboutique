@@ -9,6 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <script src="javascript/jquery.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/dialog.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/categorias.css">
         <link rel="stylesheet" type="text/css" href="css/admin.css">
@@ -57,8 +62,8 @@
                     </div>
                 </div>
                 <div class="main-admin">
-                    <a href="#" id="agregar">Agregar Usuario</a>
-                    <a href="#" id="agregar">Agregar Rol</a>
+                    <input id="dialogUser" value="Agregar Usuario" type="button" />
+                    <input id="emergente" value="Agregar Rol" type="button" />
                     <br />
                     <table>
                         <th>Código Usuario <hr id="row"></th>
@@ -89,6 +94,33 @@
             <hr id="internal-row">
             
             <div id="division"></div>
+        </div>
+        
+        <div id="Rol">
+            <form id="registro" action="Rol" method="post">
+                <label>Rol:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarRol" />
+                <input id="campos" name="txtNombre" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+            <p><a id="id_register_link" href="registro.jsp" class="nooverlay">Crear Una Cuenta</a></p>
+        </div>
+        
+        <div id="Usuario">
+            <form id="registro" action="" method="post">
+                <label>Nombre:</label> <br />
+                <label>Apellidos:</label> <br />
+                <label>Edad:</label> <br />
+                <label>Username:</label> <br />
+                <label>Contraseña:</label> <br />
+                <label>Nombre:</label> <br />
+                <label>Email:</label> <br />
+                <label>Rol:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarUsuario" />
+                <input id="campos" name="txtNombre" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+            <p><a id="id_register_link" href="registro.jsp" class="nooverlay">Crear Una Cuenta</a></p>
         </div>
     </body>
 </html>

@@ -16,6 +16,14 @@
         <servlet-name>ControladorRol</servlet-name>
         <servlet-class>Controlador.ControladorRol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Controlador</servlet-name>
+        <servlet-class>Controlador.Controlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Rol</servlet-name>
+        <servlet-class>Controlador.rol.Rol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>ControladorRol</servlet-name>
         <url-pattern>/ControladorRol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controlador</servlet-name>
+        <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Rol</servlet-name>
+        <url-pattern>/Rol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

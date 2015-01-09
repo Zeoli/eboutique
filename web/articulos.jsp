@@ -75,14 +75,12 @@
                     <td></td>
                     <td><span id="mark-precio">$</span></td>
                     <td></td>
+                    <td></td>
                     <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
                     <td><a href=""><img src="img/edit.png"></a>
                     <a href=""><img src="img/delete.png"></a>
                     </td>
                 </tr>
-                <%
-                            }
-                %>
                        
                     </table>
                 </div>
