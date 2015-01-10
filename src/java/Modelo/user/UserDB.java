@@ -22,7 +22,7 @@ import Modelo.Conexion;
 public class UserDB {
     //Metodo utilizado para insertar un Producto a nuestra Base de datos
 
-    public static synchronized boolean insertarStock(User user) {
+    public static synchronized boolean insertarUsuario(User user) {
         Connection cn = null;
         CallableStatement cl = null;
         boolean rpta = false;
