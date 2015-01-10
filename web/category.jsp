@@ -8,6 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <script src="javascript/jquery.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/dialog.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/categorias.css">
@@ -58,7 +62,7 @@
                     </div>
                 </div>
                 <div class="main-admin">
-                    <a href="#" id="agregar">Agregar Categoría</a>
+                    <input id="dialogCategoria" value="Agregar Categoria" type="button" />
                     <br />
                     <table>
                         <th>Código Categoria <hr id="row"></th>
@@ -71,9 +75,6 @@
                                 <a href=""><img src="img/delete.png"></a>
                                 <img src="img/detalle.png"></td>
                         </tr>
-                       <%
-                            }
-                %>
                     </table>
                 </div>
                 <div id="division"></div>
@@ -93,6 +94,15 @@
             <hr id="internal-row">
             
             <div id="division"></div>
+        </div>
+        
+        <div id="Categoria">
+            <form id="registro" action="Rol" method="post">
+                <label>Categoria:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarCategoria" />
+                <input id="campos" name="txtCategoria" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
         </div>
     </body>
 </html>

@@ -550,3 +550,56 @@ body {
 #dialogUser:hover {
     background-color: #ffff99;
 }
+
+#dialogStock {
+    float: left;
+    width: 20%;
+    margin: 1em 2em 1em 1em;
+    padding: 0.2em 0 0.2em 0;
+    color: black;
+    text-align: center;
+    border-color: #393f43;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.9em;
+    font-style: oblique;
+}
+
+#dialogStock:hover {
+    background-color: #ffff99;
+}
+
+#dialogArticulo {
+    float: left;
+    width: 20%;
+    margin: 1em 2em 1em 1em;
+    padding: 0.2em 0 0.2em 0;
+    color: black;
+    text-align: center;
+    border-color: #393f43;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.9em;
+    font-style: oblique;
+}
+
+#dialogArticulo:hover {
+    background-color: #ffff99;
+}
+#dialogCategoria {
+    float: left;
+    width: 20%;
+    margin: 1em 2em 1em 1em;
+    padding: 0.2em 0 0.2em 0;
+    color: black;
+    text-align: center;
+    border-color: #393f43;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.9em;
+    font-style: oblique;
+}
+
+#dialogCategoria:hover {
+    background-color: #ffff99;
+}

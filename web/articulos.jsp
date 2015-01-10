@@ -1,13 +1,11 @@
-<%-- 
-    Document   : articulos
-    Created on : 1/01/2015, 11:35:56 PM
-    Author     : Toni
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <script src="javascript/jquery.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/dialog.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/categorias.css">
@@ -57,8 +55,8 @@
                     </div>
                 </div>
                 <div class="main-admin">
-                    <a href="registrarArticulo.jsp" id="agregar">Agregar Artículo</a>
-                    <a href="#" id="agregar">Agregar Almacen</a>
+                    <input id="dialogStock" value="Agregar Almacen" type="button" />
+                    <input id="dialogArticulo" value="Agregar Articulo" type="button" />
                     <br />
                     <table>
                         <th>Código <hr id="row"></th>
@@ -100,6 +98,33 @@
             <hr id="internal-row">
             
             <div id="division"></div>
+        </div>
+        
+        <div id="Stock">
+            <form id="registro" action="" method="post">
+                <label>Articulo:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarUsuario" />
+                <input id="campos" name="txtNombre" type="text">
+                <label>Cantidad:</label> <br />
+                <input id="campos" name="txtApellido" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+        </div>
+        <div id="Articulo">
+            <form id="registro" action="" method="post">
+                <label>Imagen:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarArticulo" />
+                <input id="campos" name="txtImagen" type="text">
+                <label>Nombre:</label> <br />
+                <input id="campos" name="txtNombre" type="text"> 
+                <label>Descripcion:</label> <br />
+                <input id="campos" name="txtDescripcion" type="text">
+                <label>Precio:</label> <br />
+                <input id="campos" name="txtPrecio" type="text">
+                <label>Categoria:</label> <br />
+                <input id="campos" name="txtCategoria" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
         </div>
     </body>
 </html>

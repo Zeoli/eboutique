@@ -103,24 +103,27 @@
                 <input id="campos" name="txtNombre" type="text">
                 <input id="submit" type="submit" value="Enviar">
             </form>
-            <p><a id="id_register_link" href="registro.jsp" class="nooverlay">Crear Una Cuenta</a></p>
         </div>
         
         <div id="Usuario">
             <form id="registro" action="" method="post">
                 <label>Nombre:</label> <br />
-                <label>Apellidos:</label> <br />
-                <label>Edad:</label> <br />
-                <label>Username:</label> <br />
-                <label>Contraseña:</label> <br />
-                <label>Nombre:</label> <br />
-                <label>Email:</label> <br />
-                <label>Rol:</label> <br />
                 <input type="hidden" name="accion" value="RegistrarUsuario" />
                 <input id="campos" name="txtNombre" type="text">
+                <label>Apellidos:</label> <br />
+                <input id="campos" name="txtApellido" type="text">
+                <label>Edad:</label> <br />
+                <input id="campos" name="txtEdad" type="text">
+                <label>Username:</label> <br />
+                <input id="campos" name="txtUsername" type="text">
+                <label>Contraseña:</label> <br />
+                <input id="campos" name="txtUsername" type="password">
+                <label>Email:</label> <br />
+                <input id="campos" name="txtUsername" type="text">
+                <label>Rol:</label> <br />
+                <input id="campos" name="txtRol" type="text" readonly>
                 <input id="submit" type="submit" value="Enviar">
             </form>
-            <p><a id="id_register_link" href="registro.jsp" class="nooverlay">Crear Una Cuenta</a></p>
         </div>
     </body>
 </html>
