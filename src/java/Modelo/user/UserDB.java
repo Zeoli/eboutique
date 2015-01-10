@@ -29,7 +29,7 @@ public class UserDB {
         try {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
-            String call = "{CALL Insert_user(?,?,?,?,?,?,?,?,?,?,?)}";
+            String call = "{CALL Insert_user(?,?,?,?,?,?,?,?,?)}";
             //Obtenemos la conexion
             cn = Conexion.getConexion();
             //Decimos que vamos a crear una transaccion
@@ -47,10 +47,7 @@ public class UserDB {
             cl.setInt(6, user.getEdad());
             cl.setString(7, user.getPassword());
             cl.setString(8, user.getEmail());
-            cl.setString(9, user.getDireccion());
-            cl.setString(10, user.getCiudad());
-            cl.setString(11, user.getCP());
-            cl.setInt(12, user.getRol());
+            cl.setInt(9, user.getRol());
             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
             //registro de forma correcta los datos
             rpta = cl.executeUpdate() == 1 ? true : false;

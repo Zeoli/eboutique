@@ -36,6 +36,10 @@
         <servlet-name>Sesiones</servlet-name>
         <servlet-class>Controlador.Sesiones.Sesiones</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Usuario</servlet-name>
+        <servlet-class>Controlador.user.Usuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>Sesiones</servlet-name>
         <url-pattern>/Sesiones</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Usuario</servlet-name>
+        <url-pattern>/Usuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

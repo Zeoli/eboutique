@@ -74,7 +74,7 @@
                             <td>1</td>
                             <td>m</td>
                             <td>admin</td>
-                            <td><img src="img/edit.png"><img src="img/delete.png"><img src="img/detalle.png"></td>
+                            <td><img src="img/delete.png"></td>
                         </tr>
                     </table>
                 </div>
@@ -106,22 +106,24 @@
         </div>
         
         <div id="Usuario">
-            <form id="registro" action="" method="post">
+            <form id="registro" action="Usuario" method="post">
                 <label>Nombre:</label> <br />
                 <input type="hidden" name="accion" value="RegistrarUsuario" />
                 <input id="campos" name="txtNombre" type="text">
-                <label>Apellidos:</label> <br />
-                <input id="campos" name="txtApellido" type="text">
+                <label>Apellidos Paterno:</label> <br />
+                <input id="campos" name="txtApellidoP" type="text">
+                <label>Apellido Materno:</label> <br />
+                <input id="campos" name="txtApellidoM" type="text">
                 <label>Edad:</label> <br />
                 <input id="campos" name="txtEdad" type="text">
                 <label>Username:</label> <br />
                 <input id="campos" name="txtUsername" type="text">
                 <label>Contraseña:</label> <br />
-                <input id="campos" name="txtUsername" type="password">
+                <input id="campos" name="txtPassword" type="password">
                 <label>Email:</label> <br />
-                <input id="campos" name="txtUsername" type="text">
+                <input id="campos" name="txtEmail" type="text">
                 <label>Rol:</label> <br />
-                <input id="campos" name="txtRol" type="text" readonly>
+                <input id="campos" name="txtRol" type="text">
                 <input id="submit" type="submit" value="Enviar">
             </form>
         </div>

@@ -66,32 +66,22 @@
                             <legend>Datos de Perfil</legend>
                             <div id="labels">
                                 <label>Nombre Completo:</label>
-                                <label>Apellidos:</label>
+                                <label>Apellido Paterno:</label>
+                                <label>Apellido Materno:</label>
                                 <label>Edad:</label>
                                 <label>Nombre de Usuario:</label>
                                 <label>Contraseña:</label>
                                 <label>Correo electrónico:</label>
                             </div>
                             <div id="inputs">
-                                <input type="text" placeholder="Nombre" name="Nombre" />
-                                <input type="text" placeholder="Apellidos" name="Apellidos" />
-                                <input type="text" placeholder="Edad" name="Edad" />
-                                <input type="text" placeholder="Username" name="Username" />
-                                <input type="password" placeholder="******" name="Password" />
-                                <input type="text" placeholder="Email" name="Email" />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Datos Personales</legend>
-                            <div id="labels">
-                                <label>Dirección:</label>
-                                <label>Ciudad:</label>
-                                <label>C.P.</label>
-                            </div>
-                            <div id="inputs">
-                                <input type="text" placeholder="Dirección" name="Direccion" />
-                                <input type="text" placeholder="Ciudad" name="Ciudad" />
-                                <input type="text" placeholder="Código Postal" name="CP"/>
+                                <input type="text" placeholder="Nombre" name="txtNombre" />
+                                <input type="text" placeholder="Apellidos" name="txtApellidoP" />
+                                <input type="text" placeholder="Apellidos" name="txtApellidoM" />
+                                <input type="text" placeholder="Edad" name="txtEdad" />
+                                <input type="text" placeholder="Username" name="txtUsername" />
+                                <input type="password" placeholder="******" name="txtPassword" />
+                                <input type="text" placeholder="Email" name="txtEmail" />
+                                <input type="hidden" name="txtRol" value="1">
                             </div>
                         </fieldset>
                         <button type="submit">Registrarse</button>
