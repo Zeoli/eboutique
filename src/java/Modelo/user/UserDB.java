@@ -343,6 +343,44 @@ public class UserDB {
         }
         return rpta;
     }
+    
+    public static synchronized User obtenerUserName(String nombre) {
+        User r = new User();
+        Connection cn = null;
+        CallableStatement cl = null;
+        ResultSet rs = null;
+        try {
+            //Nombre del procedimiento almacenado
+            String call = "{CALL get_user_one_by_username(?)}";
+            cn = Conexion.getConexion();
+            cl = cn.prepareCall(call);
+            cl.setString(1, nombre);
+            //La sentencia lo almacenamos en un resulset
+            rs = cl.executeQuery();
+            //Consultamos si hay datos para recorrerlo
+            //e insertarlo en nuestro array
+            while (rs.next()) {
+                r.setId(rs.getInt("id"));
+                r.setNombre(rs.getString("nombre"));
+                r.setUsername(rs.getString("username"));
+                r.setApellidoP(rs.getString("apellidoP"));
+                r.setApellidoM(rs.getString("apellidoM"));
+                r.setPassword(rs.getString("password"));
+                r.setRol(rs.getInt("rol"));
+                }
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        }
+        return r;
+    }
 }
 
 

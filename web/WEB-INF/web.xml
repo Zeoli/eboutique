@@ -32,6 +32,10 @@
         <servlet-name>category</servlet-name>
         <servlet-class>Controlador.categoria.category</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Sesiones</servlet-name>
+        <servlet-class>Controlador.Sesiones.Sesiones</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>category</servlet-name>
         <url-pattern>/category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Sesiones</servlet-name>
+        <url-pattern>/Sesiones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
