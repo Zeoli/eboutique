@@ -8,6 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <script src="javascript/jquery.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/dialog.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/categorias.css">
@@ -58,7 +62,7 @@
                 </div>
                 <div class="main-admin">
                     <a href="registrarArticulo.jsp" id="agregar">Agregar Artículo</a>
-                    <a href="#" id="agregar">Agregar Almacen</a>
+                    <input id="dialogStock" value="Agregar Almacen" type="button" />
                     <br />
                     <table>
                         <th>Código <hr id="row"></th>
@@ -100,6 +104,17 @@
             <hr id="internal-row">
             
             <div id="division"></div>
+        </div>
+        
+        <div id="Stock">
+            <form id="registro" action="" method="post">
+                <label>Articulo:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarUsuario" />
+                <input id="campos" name="txtNombre" type="text">
+                <label>Cantidad:</label> <br />
+                <input id="campos" name="txtApellido" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
         </div>
     </body>
 </html>

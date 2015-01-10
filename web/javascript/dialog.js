@@ -36,3 +36,15 @@ $(document).ready(function() {
 		});
 	});
 });
+$(document).ready(function() {
+	$(function() {
+		$("#Stock").dialog({
+			autoOpen: false,
+			modal: true,
+		});
+		$("#dialogStock").on("click", function() {
+			$("#Stock").dialog("option", "draggable", false);
+			$("#Stock").dialog("open");
+		});
+	});
+});

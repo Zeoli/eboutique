@@ -27,6 +27,24 @@ public class User {
     public User() {
     }
     
+    public void setRol(int rol){
+        this.rol = rol;
+    }
+    public int getRol(){
+        return this.rol;
+    }
+    public void setCiudad(String ciudad){
+        this.ciudad = ciudad;
+    }
+    public String getCiudad(){
+        return this.ciudad;
+    }
+    public void setCP(String cp){
+        this.cp = cp;
+    }
+    public String getCP(){
+        return this.cp;
+    }
     public void setEmail(String email){
         this.email = email;
     }
