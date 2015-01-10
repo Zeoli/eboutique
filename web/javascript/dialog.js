@@ -48,3 +48,28 @@ $(document).ready(function() {
 		});
 	});
 });
+$(document).ready(function() {
+	$(function() {
+		$("#Articulo").dialog({
+			autoOpen: false,
+			modal: true,
+		});
+		$("#dialogArticulo").on("click", function() {
+			$("#Articulo").dialog("option", "draggable", false);
+			$("#Articulo").dialog("open");
+		});
+	});
+});
+
+$(document).ready(function() {
+	$(function() {
+		$("#Categoria").dialog({
+			autoOpen: false,
+			modal: true,
+		});
+		$("#dialogCategoria").on("click", function() {
+			$("#Categoria").dialog("option", "draggable", false);
+			$("#Categoria").dialog("open");
+		});
+	});
+});

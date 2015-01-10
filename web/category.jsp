@@ -95,5 +95,14 @@
             
             <div id="division"></div>
         </div>
+        
+        <div id="Categoria">
+            <form id="registro" action="Rol" method="post">
+                <label>Categoria:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarCategoria" />
+                <input id="campos" name="txtCategoria" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+        </div>
     </body>
 </html>

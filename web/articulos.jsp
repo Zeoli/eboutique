@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="main-admin">
-                    <a href="registrarArticulo.jsp" id="agregar">Agregar Artículo</a>
+                    <input id="dialogArticulo" value="Agregar Articulo" type="button" />
                     <input id="dialogStock" value="Agregar Almacen" type="button" />
                     <br />
                     <table>
@@ -113,6 +113,22 @@
                 <input id="campos" name="txtNombre" type="text">
                 <label>Cantidad:</label> <br />
                 <input id="campos" name="txtApellido" type="text">
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+        </div>
+        <div id="Articulo">
+            <form id="registro" action="" method="post">
+                <label>Imagen:</label> <br />
+                <input type="hidden" name="accion" value="RegistrarArticulo" />
+                <input id="campos" name="txtImagen" type="text">
+                <label>Nombre:</label> <br />
+                <input id="campos" name="txtNombre" type="text"> 
+                <label>Descripcion:</label> <br />
+                <input id="campos" name="txtDescripcion" type="text">
+                <label>Precio:</label> <br />
+                <input id="campos" name="txtPrecio" type="text">
+                <label>Categoria:</label> <br />
+                <input id="campos" name="txtCategoria" type="text">
                 <input id="submit" type="submit" value="Enviar">
             </form>
         </div>

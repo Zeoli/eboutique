@@ -36,7 +36,7 @@
                     </div>
                     <div class="user">
                         <div class="bienvenida">
-                            <% if(request.getAttribute("usuario") != null ){ %>
+                            <% if(request.getAttribute("usuario") == null ){ %>
                             <input id="sesion" value="Iniciar Sesión/Registrarse" type="button" />
                             <% } else { %>
                             <% String nombre = (String)session.getAttribute("usuario"); %> 
