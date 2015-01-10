@@ -71,9 +71,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href=""><img src="img/edit.png"></a>
-                                <a href=""><img src="img/delete.png"></a>
-                                <img src="img/detalle.png"></td>
+                            <td><a href=""><img src="img/delete.png"></a></td>
                         </tr>
                     </table>
                 </div>
