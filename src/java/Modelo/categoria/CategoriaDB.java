@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo.user;
+package Modelo.categoria;
+
 /**
  *
  * @author Toni
@@ -19,17 +20,17 @@ import Modelo.Conexion;
 // @autor Henry Joe Wong Uruqiza
 // Archivo: ProductoBD.java
 // Creado: 24FEBRERO2011 12:39:08 PM
-public class UserDB {
+public class CategoriaDB {
     //Metodo utilizado para insertar un Producto a nuestra Base de datos
 
-    public static synchronized boolean insertarStock(User user) {
+    public static synchronized boolean insertarCategoria(Categoria categoria) {
         Connection cn = null;
         CallableStatement cl = null;
         boolean rpta = false;
         try {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
-            String call = "{CALL Insert_user(?,?,?,?,?,?,?,?,?,?,?)}";
+            String call = "{CALL Insert_cat_Articulo(?,?)}";
             //Obtenemos la conexion
             cn = Conexion.getConexion();
             //Decimos que vamos a crear una transaccion
@@ -40,17 +41,7 @@ public class UserDB {
             //almacenado le decimos que es OUT y el del tipo Integer en Java
             cl.registerOutParameter(1, Types.INTEGER);
             //El siguiente parametro del procedimiento almacenado es el nombre
-            cl.setString(2, user.getNombre());
-            cl.setString(3, user.getUsername());
-            cl.setString(4, user.getApellidoP());
-            cl.setString(5, user.getAPellidoM());
-            cl.setInt(6, user.getEdad());
-            cl.setString(7, user.getPassword());
-            cl.setString(8, user.getEmail());
-            cl.setString(9, user.getDireccion());
-            cl.setString(10, user.getCiudad());
-            cl.setString(11, user.getCP());
-            cl.setInt(12, user.getRol());
+            cl.setString(2, categoria.getNombre());
             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
             //registro de forma correcta los datos
             rpta = cl.executeUpdate() == 1 ? true : false;
@@ -78,14 +69,14 @@ public class UserDB {
     }
 
     //Metodo utilizado para insertar un Producto a nuestra Base de datos
-    public static synchronized boolean actualizarUser(User user) {
+    public static synchronized boolean actualizarCategoria(Categoria categoria) {
         Connection cn = null;
         CallableStatement cl = null;
         boolean rpta = false;
         try {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
-            String call = "{CALL update_user(?,?,?,?,?,?,?,?,?,?,?,?}";
+            String call = "{CALL Update_cat_Articulo(?,?}";
             //Obtenemos la conexion
             cn = Conexion.getConexion();
             //Decimos que vamos a crear una transaccion
@@ -93,20 +84,9 @@ public class UserDB {
             //Preparamos la sentecia
             cl = cn.prepareCall(call);
             //El primer parametro del procedimiento almacenado es el codigo
-            cl.setInt(1, user.getId());
+            cl.setInt(1, categoria.getId());
             //El siguiente parametro del procedimiento almacenado es el nombre
-            cl.setString(2, user.getNombre());
-            cl.setString(3, user.getUsername());
-            cl.setString(4, user.getApellidoP());
-            cl.setString(5, user.getAPellidoM());
-            cl.setString(7, user.getPassword());
-            cl.setInt(12, user.getRol());
-            cl.setInt(6, user.getEdad());
-            cl.setString(8, user.getEmail());
-            cl.setString(9, user.getDireccion());
-            cl.setString(10, user.getCiudad());
-            cl.setString(11, user.getCP());
-            
+            cl.setString(2, categoria.getNombre());
             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
             //registro de forma correcta los datos
             rpta = cl.executeUpdate() == 1 ? true : false;
@@ -131,96 +111,17 @@ public class UserDB {
             Conexion.cerrarConexion(cn);
         }
         return rpta;
-    }
-    
-    public static synchronized boolean cambiarPassword(User user) {
-        Connection cn = null;
-        CallableStatement cl = null;
-        boolean rpta = false;
-        try {
-            //Nombre del procedimiento almacenado y como espera tres parametros
-            //le ponemos 3 interrogantes
-            String call = "{CALL change_password(?,?}";
-            //Obtenemos la conexion
-            cn = Conexion.getConexion();
-            //Decimos que vamos a crear una transaccion
-            cn.setAutoCommit(false);
-            //Preparamos la sentecia
-            cl = cn.prepareCall(call);
-            //El primer parametro del procedimiento almacenado es el codigo
-            cl.setInt(1, user.getId());
-            cl.setString(2, user.getPassword());
-            
-            //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
-            //registro de forma correcta los datos
-            rpta = cl.executeUpdate() == 1 ? true : false;
-            if (rpta) {
-                //Confirmamos la transaccion
-                cn.commit();
-            } else {
-                //Negamos la transaccion
-                Conexion.deshacerCambios(cn);
-            }
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Conexion.deshacerCambios(cn);
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Conexion.deshacerCambios(cn);
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        }
-        return rpta;
-    }
-    
-    public static synchronized User obtenerPassword(int idUser) {
-        User r = new User();
-        Connection cn = null;
-        CallableStatement cl = null;
-        ResultSet rs = null;
-        try {
-            //Nombre del procedimiento almacenado
-            String call = "{CALL get_user_password(?)}";
-            cn = Conexion.getConexion();
-            cl = cn.prepareCall(call);
-            cl.setInt(1, idUser);
-            //La sentencia lo almacenamos en un resulset
-            rs = cl.executeQuery();
-            //Consultamos si hay datos para recorrerlo
-            //e insertarlo en nuestro array
-            while (rs.next()) {
-                //Obtenemos los valores de la consulta y creamos
-                //nuestro objeto producto
-                r.setId(rs.getInt("id"));
-                r.setPassword(rs.getString("password"));
-            }
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Conexion.cerrarCall(cl);
-            Conexion.cerrarConexion(cn);
-        }
-        return r;
     }
     //Metodo utilizado para obtener todos los productos de nuestra base de datos
 
-    public static synchronized ArrayList<User> obtenerUser() {
-        ArrayList<User> lista = new ArrayList<User>();
+    public static synchronized ArrayList<Categoria> obtenerCategoria() {
+        ArrayList<Categoria> lista = new ArrayList<Categoria>();
         Connection cn = null;
         CallableStatement cl = null;
         ResultSet rs = null;
         try {
             //Nombre del procedimiento almacenado
-            String call = "{CALL get_user_all()}";
+            String call = "{CALL get_cat_all()}";
             cn = Conexion.getConexion();
             cl = cn.prepareCall(call);
             //La sentencia lo almacenamos en un resulset
@@ -228,18 +129,11 @@ public class UserDB {
             //Consultamos si hay datos para recorrerlo
             //e insertarlo en nuestro array
             while (rs.next()) {
-                User r = new User();
+                Categoria r = new Categoria();
                 //Obtenemos los valores de la consulta y creamos
                 //nuestro objeto producto
-                r.setId(rs.getInt("idproducto"));
+                r.setId(rs.getInt("id"));
                 r.setNombre(rs.getString("nombre"));
-                r.setApellidoP(rs.getString("apellidoP"));
-                r.setApellidoM(rs.getString("apellidoM"));
-                r.setEdad(rs.getInt("edad"));
-                r.setEmail(rs.getString("correo"));
-                r.setDireccion(rs.getString("direccion"));
-                r.setCiudad(rs.getString("ciudad"));
-                r.setRol(rs.getInt("rol"));
                 //Lo adicionamos a nuestra lista
                 lista.add(r);
             }
@@ -258,17 +152,17 @@ public class UserDB {
     }
 
     //Metodo utilizado para obtener todos los productos de nuestra base de datos
-    public static synchronized User obtenerUser(int idUser) {
-        User r = new User();
+    public static synchronized Categoria obtenerCategoria(int id) {
+        Categoria r = new Categoria();
         Connection cn = null;
         CallableStatement cl = null;
         ResultSet rs = null;
         try {
             //Nombre del procedimiento almacenado
-            String call = "{CALL get_user_one(?)}";
+            String call = "{CALL get_cat_one(?)}";
             cn = Conexion.getConexion();
             cl = cn.prepareCall(call);
-            cl.setInt(1, idUser);
+            cl.setInt(1, id);
             //La sentencia lo almacenamos en un resulset
             rs = cl.executeQuery();
             //Consultamos si hay datos para recorrerlo
@@ -276,16 +170,8 @@ public class UserDB {
             while (rs.next()) {
                 //Obtenemos los valores de la consulta y creamos
                 //nuestro objeto producto
-                r.setId(rs.getInt("idproducto"));
+                r.setId(rs.getInt("id"));
                 r.setNombre(rs.getString("nombre"));
-                r.setApellidoP(rs.getString("apellidoP"));
-                r.setApellidoM(rs.getString("apellidoM"));
-                r.setEdad(rs.getInt("edad"));
-                r.setPassword(rs.getString("password"));
-                r.setEmail(rs.getString("correo"));
-                r.setDireccion(rs.getString("direccion"));
-                r.setCiudad(rs.getString("ciudad"));
-                r.setRol(rs.getInt("rol"));
             }
             Conexion.cerrarCall(cl);
             Conexion.cerrarConexion(cn);
@@ -301,14 +187,14 @@ public class UserDB {
         return r;
     }
     
-    public static synchronized boolean eliminarUser(int id) {
+    public static synchronized boolean eliminarCategoria(int id) {
         Connection cn = null;
         CallableStatement cl = null;
         boolean rpta = false;
         try {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
-            String call = "{CALL delete_user(?)}";
+            String call = "{CALL delete_cat_Articulo(?)}";
             //Obtenemos la conexion
             cn = Conexion.getConexion();
             //Decimos que vamos a crear una transaccion
@@ -344,6 +230,4 @@ public class UserDB {
         return rpta;
     }
 }
-
-
 

@@ -24,6 +24,14 @@
         <servlet-name>Rol</servlet-name>
         <servlet-class>Controlador.rol.Rol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Stockcontrolador</servlet-name>
+        <servlet-class>Controlador.stock.Stockcontrolador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>category</servlet-name>
+        <servlet-class>Controlador.categoria.category</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>Rol</servlet-name>
         <url-pattern>/Rol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Stockcontrolador</servlet-name>
+        <url-pattern>/Stockcontrolador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>category</servlet-name>
+        <url-pattern>/category</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
