@@ -24,6 +24,10 @@
         <servlet-name>Rol</servlet-name>
         <servlet-class>Controlador.rol.Rol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Sesiones</servlet-name>
+        <servlet-class>Controlador.Sesiones.Sesiones</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Rol</servlet-name>
         <url-pattern>/Rol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Sesiones</servlet-name>
+        <url-pattern>/Sesiones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -35,7 +35,13 @@
                     </div>
                     <div class="user">
                         <div class="bienvenida">
+                            <% if(request.getAttribute("usuario") != null ){ %>
                             <input id="sesion" value="Iniciar Sesión/Registrarse" type="button" />
+                            <% } else { %>
+                            <% String nombre = (String)session.getAttribute("usuario"); %> 
+                            <p id="l"> Bienvenido <%= nombre %></p>
+                            <% } %>
+                            
                         </div>
                     </div>
                     <div class="options">
@@ -186,8 +192,9 @@
         </div>
         
         <div id="dialog">
-            <form id="registro" action="" method="post">
+            <form id="registro" action="Sesiones" method="post">
                 <label>Usuario:</label> <br />
+                <input type="hidden" name="accion" value="IniciarSesion" />
                 <input id="campos" name="usuario" type="text">
                 <label>Password:</label> <br />
                 <input id="campos" name="password" type="text">

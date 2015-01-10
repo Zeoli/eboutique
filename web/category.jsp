@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="main-admin">
-                    <input id="dialogCategoria" value="Agregar Categoria" type="button" />
+                    <input id="dialogCategoria" value="Agregar Categoría" type="button" />
                     <br />
                     <table>
                         <th>Código Categoria <hr id="row"></th>
