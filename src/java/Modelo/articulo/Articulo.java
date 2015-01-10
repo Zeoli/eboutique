@@ -5,6 +5,8 @@
  */
 package Modelo.articulo;
 
+import java.awt.Image;
+
 /**
  *
  * @author Toni
@@ -13,6 +15,11 @@ public class Articulo {
     //Las columnas que tiene la tabla Producto
     private int id;
     private String nombre;
+    private String descripcion;
+    private double precio;
+    private int categoria;
+    private String img;
+    private Image imagen;
     //Constructor de la clase sin parametros
     public Articulo() {
     }
@@ -21,11 +28,35 @@ public class Articulo {
         this.id = codigoRol;
         this.nombre = nombre;
     }
-    //Metodo toString de la clase que nos retorna
-    //el nombre del producto
-    @Override
-    public String toString() {
-        return nombre.toUpperCase();
+    public void setImagen(Image img){
+        this.imagen = img;
+    }
+    public Image getImagen(){
+        return this.imagen;
+    }
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+    public String getDescripcion(){
+        return this.descripcion;
+    }
+    public void setPrecio(double precio){
+        this.precio = precio;
+    }
+    public double getPrecio(){
+        return this.precio;
+    }
+    public void setCategoria(int categoria){
+        this.categoria = categoria;
+    }
+    public int getCategoria(){
+        return this.categoria;
+    }
+    public void setImg(String img){
+        this.img = img;
+    }
+    public String getImg(){
+        return this.img;
     }
     //Metodos get y set de la clase
     public void setId(int id){
