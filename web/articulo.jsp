@@ -1,6 +1,6 @@
 <%-- 
-    Document   : categorias
-    Created on : 30/12/2014, 02:06:25 PM
+    Document   : articulo
+    Created on : 10/01/2015, 03:40:20 AM
     Author     : Toni
 --%>
 
@@ -62,22 +62,9 @@
                     <div id="marco">
                         <div id="encabezado">
                             <p id="titulo">
-                                <span>Categorias:</span>
+                                <span>Articulos <%= CategoriaDB.obtenerCategoria(Integer.parseInt(request.getParameter("id"))).getNombre() %>:</span>
                             </p>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="galerias">
-                    <div id="grid">
-                        <%
-                            ArrayList<Categoria> lista = CategoriaDB.obtenerCategoria();
-                            for (Categoria p : lista) {
-                        %>
-                        <div id="categoria">
-                            <a href="articulo.jsp?id=<%= p.getId() %>"><span><%=p.getNombre() %></span></a>
-                        </div>
-                        <% } %>
                     </div>
                 </div>
                 <div id="division"></div>
@@ -122,4 +109,5 @@
         </div>
     </body>
 </html>
+
 

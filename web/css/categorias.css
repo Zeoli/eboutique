@@ -15,10 +15,24 @@
 #grid {
     float: left;
     width: 80%;
-    height: 30em;
     margin: 0 6em 0 6em;
     padding: 0 0 0 0;
-    border-style: solid;
-    border-width: 1px;
 }
 
+#categoria {
+    float: left;
+    width: 20%;
+    height: 10em;
+    margin: 0 1em 1em 0;
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+    opacity: 0.9;
+}
+
+#categoria span {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 3em 3em 0 1em;
+    font-size: 1.3em;
+}
