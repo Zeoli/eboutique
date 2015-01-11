@@ -4,6 +4,9 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.venta.ventaDB"%>
+<%@page import="Modelo.venta.venta"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -60,26 +63,41 @@
                     <table>
                         <th><span>Código</span> <hr id="row"> </th>
                         <th><span>Cliente</span> <hr id="row"> </th>
+                        <th><span>Fecha</span> <hr id="row"> </th>
                         <th><span>Productos</span> <hr id="row"> </th>
                         <th><span>Precio</span> <hr id="row"> </th>
                         <th><span>Cantidad</span> <hr id="row"> </th>
                         <th><span>Total</span> <hr id="row"> </th>
+                        <%
+                          
+                            ArrayList<venta> lista = ventaDB.obtenerVenta();
+                            for (venta v : lista) {
+                        %>
                         <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>s</td>
-                            <td>d</td>
-                            <td><span id="mark-precio">$</span><span id="datos">10.00</span></td>
+                            <td><%= v.getId()%></td>
+                            <td><%= v.getCliente() %></td>
+                            <td><%= v.getFecha() %></td>
+                            <td><%= v.getIdProducto() %></td>
+                            <td><span id="mark-precio">$</span><%= v.getPrecio() %></td>
+                            <td><%= v.getCantidad() %></td> 
+                            <td><span id="mark-precio">$</span><%= v.getParcial() %></td>
+                            <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
+
                         </tr>
+                        <%
+                            }
+                            ArrayList<venta> listaVent = ventaDB.obtenerVenta();
+                            for (venta vnt : listaVent) {
+                        %>
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td><hr id="row"><span>Total</span></td>
-                            <td><hr id="row"><span id="mark-precio">$</span><span id="datos">10.00</span></td>
+                            <td><hr id="row"><span id="mark-precio">$</span> <%= vnt.getTotalPagar() %> </td>
                         </tr>
+                        <% } %>
                     </table>
                 </div>
                 <div id="division"></div>
