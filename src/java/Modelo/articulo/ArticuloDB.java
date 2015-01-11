@@ -37,7 +37,7 @@ public class ArticuloDB {
         try {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
-            String call = "{CALL Insert_articulo(?,?,?,?,?,?)}";
+            String call = "{CALL Insert_articulo(?,?,?,?,?)}";
             //Obtenemos la conexion
             cn = Conexion.getConexion();
             //Decimos que vamos a crear una transaccion
@@ -52,10 +52,6 @@ public class ArticuloDB {
             cl.setString(3, rol.getDescripcion());
             cl.setDouble(4, rol.getPrecio());
             cl.setInt(5, rol.getCategoria());
-            
-            File fichero = new File(rol.getImg());
-            FileInputStream streamEntrada = new FileInputStream(fichero);
-            cl.setBinaryStream(6, streamEntrada, (int) fichero.length());
             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
             //registro de forma correcta los datos
             rpta = cl.executeUpdate() == 1 ? true : false;

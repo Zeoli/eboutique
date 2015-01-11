@@ -40,6 +40,10 @@
         <servlet-name>Usuario</servlet-name>
         <servlet-class>Controlador.user.Usuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Articulos</servlet-name>
+        <servlet-class>Controlador.articulo.Articulos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorCategoriaArticulo</servlet-name>
         <url-pattern>/ControladorCategoriaArticulo</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Articulos</servlet-name>
+        <url-pattern>/Articulos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

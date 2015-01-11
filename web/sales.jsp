@@ -4,6 +4,9 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.articulo.venta"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.articulo.ventaDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -64,22 +67,22 @@
                         <th><span>Precio</span> <hr id="row"> </th>
                         <th><span>Cantidad</span> <hr id="row"> </th>
                         <th><span>Total</span> <hr id="row"> </th>
+                        
+                        <%
+                            ArrayList<venta> lista = ventaDB.obtenerVenta();
+                            for (venta v : lista) {
+                        %>
                         <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>s</td>
-                            <td>d</td>
-                            <td><span id="mark-precio">$</span><span id="datos">10.00</span></td>
+                            <td><%= v.getId()%></td>
+                            <td><%= v.getCliente() %></td>
+                            <td><%= v.getProducto() %></td>
+                            <td><%= v.getPrecio() %></td>
+                           <td><%= v.getCantidad() %></td>
+                           <td><%= v.getTotal() %></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><hr id="row"><span>Total</span></td>
-                            <td><hr id="row"><span id="mark-precio">$</span><span id="datos">10.00</span></td>
-                        </tr>
+                       <%
+                            }
+                %>
                     </table>
                 </div>
                 <div id="division"></div>

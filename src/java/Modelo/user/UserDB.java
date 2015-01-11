@@ -99,10 +99,6 @@ public class UserDB {
             cl.setString(7, user.getPassword());
             cl.setInt(12, user.getRol());
             cl.setInt(6, user.getEdad());
-            cl.setString(8, user.getEmail());
-            cl.setString(9, user.getDireccion());
-            cl.setString(10, user.getCiudad());
-            cl.setString(11, user.getCP());
             
             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
             //registro de forma correcta los datos
@@ -228,14 +224,12 @@ public class UserDB {
                 User r = new User();
                 //Obtenemos los valores de la consulta y creamos
                 //nuestro objeto producto
-                r.setId(rs.getInt("idproducto"));
+                r.setId(rs.getInt("id"));
                 r.setNombre(rs.getString("nombre"));
+                r.setUsername(rs.getString("username"));
                 r.setApellidoP(rs.getString("apellidoP"));
                 r.setApellidoM(rs.getString("apellidoM"));
                 r.setEdad(rs.getInt("edad"));
-                r.setEmail(rs.getString("correo"));
-                r.setDireccion(rs.getString("direccion"));
-                r.setCiudad(rs.getString("ciudad"));
                 r.setRol(rs.getInt("rol"));
                 //Lo adicionamos a nuestra lista
                 lista.add(r);

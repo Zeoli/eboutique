@@ -48,6 +48,7 @@ public class Stockcontrolador extends HttpServlet {
             throws ServletException, IOException {
         Stock r = new Stock();
         //request.getParameter --> Sirve para obtener los valores de las cajas de texto
+        r.setId(Integer.parseInt(request.getParameter("txtNombre")));
         r.setCantidad(Integer.parseInt(request.getParameter("txtCantidad")));
         boolean rpta = StockDB.insertarStock(r);
         if (rpta) {

@@ -4,6 +4,10 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.categoria.CategoriaDB"%>
+<%@page import="Modelo.categoria.Categoria"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -68,11 +72,20 @@
                         <th>Código Categoria <hr id="row"></th>
                         <th>Nombre Categoría <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
+                        <%
+                            ArrayList<Categoria> lista = CategoriaDB.obtenerCategoria();
+                            for (Categoria categoria : lista) {
+                        %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td><a href=""><img src="img/delete.png"></a></td>
+                            <td><%= categoria.getId()%></td>
+                            <td><%= categoria.getNombre()%></td>
+                            <td><a href="actualizarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/edit.png"></a>
+                                <a href="eliminarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/delete.png"></a>
+                                <img src="img/detalle.png"></td>
                         </tr>
+                       <%
+                            }
+                %>
                     </table>
                 </div>
                 <div id="division"></div>
@@ -95,7 +108,7 @@
         </div>
         
         <div id="Categoria">
-            <form id="registro" action="Rol" method="post">
+            <form id="registro" action="category" method="post">
                 <label>Categoria:</label> <br />
                 <input type="hidden" name="accion" value="RegistrarCategoria" />
                 <input id="campos" name="txtCategoria" type="text">

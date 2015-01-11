@@ -1,7 +1,7 @@
-package Controlador.categoria;
+package Controlador.articulo;
 
-import Modelo.categoria.Categoria;
-import Modelo.categoria.CategoriaDB;
+import Modelo.articulo.Articulo;
+import Modelo.articulo.ArticuloDB;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 //@author Henry Joe Wong Urquiza
 
-public class category extends HttpServlet {
+public class Articulos extends HttpServlet {
 
     //Para controlar peticiones del tipo GET
     @Override
@@ -31,25 +31,29 @@ public class category extends HttpServlet {
         //debemos hacer
         String accion = request.getParameter("accion");
         switch (accion) {
-            case "RegistrarCategoria":
-                this.registrarCategoria(request, response);
+            case "RegistrarArticulo":
+                this.registrarArticulo(request, response);
                 break;
-            case "ModificarCategoria":
-                this.actualizarCategoria(request, response);
+            case "ModificarArticulo":
+                this.actualizarArticulo(request, response);
                 break;
-            case "EliminarCategoria":
-                this.eliminarCategoria(request, response);
+            case "EliminarArticulo":
+                this.eliminarArticulo(request, response);
                 break;
         }
 
     }
     //Metodo que sirve para registrar un producto 
-    private void registrarCategoria(HttpServletRequest request, HttpServletResponse response)
+    private void registrarArticulo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Categoria r = new Categoria();
+         Articulo r = new Articulo();
         //request.getParameter --> Sirve para obtener los valores de las cajas de texto
-        r.setNombre(request.getParameter("txtCategoria"));
-        boolean rpta = CategoriaDB.insertarCategoria(r);
+        r.setNombre(request.getParameter("txtNombre"));
+        r.setImg(request.getParameter("txtImagen"));
+        r.setDescripcion(request.getParameter("txtDescripcion"));
+        r.setPrecio(Double.valueOf(request.getParameter("txtPrecio")));
+        r.setCategoria(Integer.parseInt(request.getParameter("txtCategoria")));
+        boolean rpta = ArticuloDB.insertarArticulo(r);
         if (rpta) {
             //Si inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
             response.sendRedirect("mensaje.jsp?men=Se registro del producto de manera correcta");
@@ -59,12 +63,16 @@ public class category extends HttpServlet {
         }
     }
     //Metodo que sirve para actualizar un producto
-    private void actualizarCategoria(HttpServletRequest request, HttpServletResponse response)
+    private void actualizarArticulo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Categoria r = new Categoria();
+        Articulo r = new Articulo();
         r.setId(Integer.parseInt(request.getParameter("txtCodigo")));
         r.setNombre(request.getParameter("txtNombre"));
-        boolean rpta = CategoriaDB.actualizarCategoria(r);
+        r.setImg(request.getParameter("txtImagen"));
+        r.setDescripcion(request.getParameter("txtDescripcion"));
+        r.setPrecio(Double.valueOf(request.getParameter("txtPrecio")));
+        r.setCategoria(Integer.parseInt(request.getParameter("txtCategoria")));
+        boolean rpta = ArticuloDB.actualizarArticulo(r);
         if (rpta) {
             response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
         } else {
@@ -72,11 +80,11 @@ public class category extends HttpServlet {
         }
     }
     
-    private void eliminarCategoria (HttpServletRequest request, HttpServletResponse response)
+    private void eliminarArticulo (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Categoria rol = new Categoria();
+        Articulo rol = new Articulo();
         rol.setId(Integer.parseInt(request.getParameter("txtCodigo")));
-        boolean rpta = CategoriaDB.eliminarCategoria(rol.getId());
+        boolean rpta = ArticuloDB.eliminarArticulo(rol.getId());
         if (rpta) {
             response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
         } else {

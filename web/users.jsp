@@ -4,6 +4,11 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.user.User"%>
+<%@page import="Modelo.user.UserDB"%>
+<%@page import="Modelo.roles.RolDB"%>
+<%@page import="Modelo.roles.roles"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -70,12 +75,23 @@
                         <th>Nombre Usuario <hr id="row"></th>
                         <th>Rol Usuario <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
+                        <%
+                          
+                            ArrayList<User> listaUsuarios = UserDB.obtenerUser();
+                            for (User usuario : listaUsuarios) {
+                        %>
                         <tr>
-                            <td>1</td>
-                            <td>m</td>
-                            <td>admin</td>
+                            <td><%= usuario.getId() %></td>
+                            <td><%= usuario.getUsername() %></td>
+                            <% 
+                                roles rol = RolDB.obtenerRol(usuario.getRol());
+                            %>
+                            <td><%= rol.getNombre() %></td>
                             <td><img src="img/delete.png"></td>
                         </tr>
+                        <%
+                            }
+                        %>
                     </table>
                 </div>
                 <div id="division"></div>
@@ -123,7 +139,15 @@
                 <label>Email:</label> <br />
                 <input id="campos" name="txtEmail" type="text">
                 <label>Rol:</label> <br />
-                <input id="campos" name="txtRol" type="text">
+                <select name="txtRol">
+                    <% 
+                            ArrayList<roles> listaRoles = RolDB.obtenerRol();
+                            for (roles rol : listaRoles) {
+                    %>
+                    <option id="campos" value="<%= rol.getId() %>"><%= rol.getNombre() %></option>
+                    <% } %>
+                </select>
+                <br />
                 <input id="submit" type="submit" value="Enviar">
             </form>
         </div>

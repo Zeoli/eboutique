@@ -4,6 +4,13 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.articulo.ArticuloDB"%>
+<%@page import="Modelo.articulo.Articulo"%>
+<%@page import="Modelo.stock.Stock"%>
+<%@page import="Modelo.stock.StockDB"%>
+<%@page import="Modelo.categoria.Categoria"%>
+<%@page import="Modelo.categoria.CategoriaDB"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -66,24 +73,32 @@
                     <br />
                     <table>
                         <th>Código <hr id="row"></th>
-                        <th>Imagen <hr id="row"></th>
                         <th>Nombre <hr id="row"></th>
                         <th>Descripcion <hr id="row"></th>
                         <th>Precio <hr id="row"></th>
+                        <th>Cantidad <hr id="row"></th>
                         <th>Categoria <hr id="row"></th>
                         <th>Opciones <hr id="row"></th>
+                <%
+                          
+                            ArrayList<Articulo> listaArticulo = ArticuloDB.obtenerArticulo();
+                            for (Articulo articulo : listaArticulo) {
+                %>
                 <tr>
-                    <td></td>
-                   
-                    <td></td>
-                    <td></td>
-                    <td><span id="mark-precio">$</span></td>
-                    <td></td>
-                    <td></td>
+                    <td><%= articulo.getId()%></td>
+                    <td><%= articulo.getNombre()%></td>
+                    <td><%= articulo.getDescripcion()%></td>
+                    <td><span id="mark-precio">$</span><%= articulo.getPrecio()%></td>
+                    <% Stock stock = StockDB.obtenerStock(articulo.getId()); %>
+                    <td><%= stock.getCantidad() %></td>
+                    <% Categoria categoria = CategoriaDB.obtenerCategoria(articulo.getCategoria()); %>
+                    <td><%= categoria.getNombre() %></td>
                     <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
-                    <td><a href=""><img src="img/delete.png"></a>
-                    </td>
+                    <td><img src="img/edit.png"><img src="img/delete.png"></td>
                 </tr>
+                <%
+                            }
+                %>
                        
                     </table>
                 </div>
@@ -106,20 +121,29 @@
         </div>
         
         <div id="Stock">
-            <form id="registro" action="" method="post">
+            <form id="registro" action="Stockcontrolador" method="post">
                 <label>Articulo:</label> <br />
-                <input type="hidden" name="accion" value="RegistrarUsuario" />
-                <input id="campos" name="txtNombre" type="text">
+                <input type="hidden" name="accion" value="RegistrarStock" />
+                <select name="txtNombre">
+                    <%
+                          
+                            ArrayList<Articulo> lista = ArticuloDB.obtenerArticulo();
+                            for (Articulo articulo : lista) {
+                    %>
+                    <option value="<%= articulo.getId() %>"><%= articulo.getNombre() %></option>
+                    <% } %>
+                </select>
+                <br />
                 <label>Cantidad:</label> <br />
-                <input id="campos" name="txtApellido" type="text">
+                <input id="campos" name="txtCantidad" type="text">
                 <input id="submit" type="submit" value="Enviar">
             </form>
         </div>
         <div id="Articulo">
-            <form id="registro" action="" method="post">
+            <form id="registro" action="Articulos" method="post">
                 <label>Imagen:</label> <br />
-                <input type="hidden" name="accion" value="RegistrarArticulo" />
-                <input id="campos" name="txtImagen" type="text">
+                <input type="hidden" name="accion" value="RegistrarArticulo">
+                <input id="campos" name="txtImagen" type="file">
                 <label>Nombre:</label> <br />
                 <input id="campos" name="txtNombre" type="text"> 
                 <label>Descripcion:</label> <br />
@@ -127,7 +151,15 @@
                 <label>Precio:</label> <br />
                 <input id="campos" name="txtPrecio" type="text">
                 <label>Categoria:</label> <br />
-                <input id="campos" name="txtCategoria" type="text">
+                <select name="txtCategoria">
+                    <%
+                           ArrayList<Categoria> listaCategoria = CategoriaDB.obtenerCategoria();
+                            for (Categoria categoria : listaCategoria) { 
+                    %>
+                    <option value="<%= categoria.getId() %>"><%= categoria.getNombre() %></option>
+                    <% } %>
+                </select>
+                <br />
                 <input id="submit" type="submit" value="Enviar">
             </form>
         </div>
