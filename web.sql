@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2015 at 11:27 AM
+-- Generation Time: Jan 13, 2015 at 09:06 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -74,6 +74,18 @@ FROM
     stock
 WHERE
     idproducto = _id
+
+;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_user`(IN `_id` INT)
+BEGIN
+
+DELETE
+FROM
+    usuario
+WHERE
+    id = _id
 
 ;
 END$$
@@ -329,6 +341,7 @@ SELECT
 	p.username,
 	p.apellidoP,
 	p.apellidoM,
+	p.password,
 	p.rol
 FROM
     usuario p
@@ -689,17 +702,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
   `imagen` longblob NOT NULL,
   PRIMARY KEY (`id`),
   KEY `articulo_categoria_idx` (`categoria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `articulo`
---
-
-INSERT INTO `articulo` (`id`, `nombre`, `descripcion`, `precio`, `categoria`, `imagen`) VALUES
-(1, 'vstido', 'blanco', '1220.00', 1, 0x30),
-(2, 'ASFS', 'FGG', '12.20', 1, 0x30),
-(3, 'A', '12D', '130.00', 1, 0x30),
-(4, 'AGUA', 'BLUSA', '10.00', 1, '');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -720,8 +723,7 @@ CREATE TABLE IF NOT EXISTS `categoriaarticulo` (
 INSERT INTO `categoriaarticulo` (`id`, `nombre`) VALUES
 (1, 'DAMITAS'),
 (2, 'HOMBRES'),
-(3, 'NINIOS'),
-(4, 'Deportiva');
+(3, 'NINIOS');
 
 -- --------------------------------------------------------
 
@@ -759,14 +761,15 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `nombre`) VALUES
-(1, 'Cliente');
+(1, 'Cliente'),
+(2, 'admin');
 
 -- --------------------------------------------------------
 
@@ -779,15 +782,6 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `stock` int(11) NOT NULL,
   UNIQUE KEY `idproducto_UNIQUE` (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `stock`
---
-
-INSERT INTO `stock` (`idproducto`, `stock`) VALUES
-(2, 10),
-(3, 100),
-(4, 10);
 
 -- --------------------------------------------------------
 
@@ -808,14 +802,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`),
   KEY `usuario_rol_idx` (`rol`),
   KEY `rol` (`rol`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nombre`, `username`, `apellidoP`, `apellidoM`, `edad`, `password`, `correo`, `rol`) VALUES
-(1, 'Zeoli', 'Toni', 'Maldonado', 'Morales', 21, 'toni', 'toni', 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
