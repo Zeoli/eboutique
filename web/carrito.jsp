@@ -4,6 +4,8 @@
     Author     : Toni
 --%>
 
+<%@page import="Modelo.articulo.Articulo"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -70,12 +72,20 @@
                     </div>
                 </div>
                 <div class="carrito-box">
+                    <% if (session.getAttribute("carritoArticulo") == null) {%>
                     <div id="division"></div>
                     <div id="mensaje-carrito">
                         <span>Tu carrito está vacio</span>
                     </div>
                     <img src="img/carrito.png">
                     <div id="division"></div>
+                    <% } else { %>
+                    <table>
+                        <th><span>Producto</span> <hr id="row"> </th>
+                        <th><span>Precio</span> <hr id="row"> </th>
+                        <th><span>Total</span> <hr id="row"> </th>
+                    </table>
+                    <% } %>
                 </div>
                 <div id="division"></div>
                 <!-- Contenido -->

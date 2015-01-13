@@ -87,7 +87,13 @@
                                 roles rol = RolDB.obtenerRol(usuario.getRol());
                             %>
                             <td><%= rol.getNombre() %></td>
-                            <td><img src="img/delete.png"></td>
+                            <td>
+                                <form action="Usuario" method="Post">
+                                    <input type="hidden" name="accion" value="EliminarUsuario" />
+                                    <input type="hidden" name="id" value="<%= usuario.getId() %>" />
+                                    <input type="image" src="img/delete.png" widht="30" height="30"/>
+                                </form>
+                            </td>
                         </tr>
                         <%
                             }

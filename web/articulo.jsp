@@ -8,6 +8,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.categoria.Categoria" %>
 <%@page import="Modelo.categoria.CategoriaDB" %>
+<%@page import="Modelo.articulo.Articulo" %>
+<%@page import="Modelo.articulo.ArticuloDB" %>
 <%@page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
@@ -72,7 +74,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="galerias">
+                    <div id="grid">
+                        <%
+                            ArrayList<Articulo> lista = ArticuloDB.obtenerArticulo();
+                            for (Articulo p : lista) {
+                        %>
+                        <div id="categoria">
+                            <input id="articul" value="<%= p.getNombre() %>" type="button" />
+                            <form action="Carrito" method="POST">
+                                <input id="campos" name="accion" type="hidden" value="Agregar">
+                                <input id="campos" name="id" type="hidden" value="<%= p.getId() %>">
+                                <input value="Agregar a Carrito" type="submit" />
+                            </form>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
                 <div id="division"></div>
+                
                 <!-- Contenido -->
             </div>
             

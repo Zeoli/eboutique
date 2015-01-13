@@ -79,9 +79,13 @@
                         <tr>
                             <td><%= categoria.getId()%></td>
                             <td><%= categoria.getNombre()%></td>
-                            <td><a href="actualizarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/edit.png"></a>
-                                <a href="eliminarCategoria.jsp?id=<%= categoria.getId()%>"><img src="img/delete.png"></a>
-                                <img src="img/detalle.png"></td>
+                            <td>
+                                <form action="category" method="Post">
+                                    <input type="hidden" name="accion" value="EliminarCategoria" />
+                                    <input type="hidden" name="id" value="<%= categoria.getId() %>" />
+                                    <input type="image" src="img/delete.png" widht="30" height="30"/>
+                                </form>
+                            </td>
                         </tr>
                        <%
                             }

@@ -36,3 +36,13 @@
     margin: 3em 3em 0 1em;
     font-size: 1.3em;
 }
+
+#articul {
+    float: left;
+    margin: 2em 0 0 2em;
+    padding: 0 0 0 0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1em;
+    font-style: oblique;
+}

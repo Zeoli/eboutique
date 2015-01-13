@@ -94,7 +94,13 @@
                     <% Categoria categoria = CategoriaDB.obtenerCategoria(articulo.getCategoria()); %>
                     <td><%= categoria.getNombre() %></td>
                     <%-- Enlaces a las paginas de actualizar o anadir al carrito --%>
-                    <td><img src="img/edit.png"><img src="img/delete.png"></td>
+                    <td>
+                        <form action="Articulos" method="Post">
+                            <input type="hidden" name="accion" value="EliminarArticulo" />
+                            <input type="hidden" name="id" value="<%= articulo.getId() %>" />
+                            <input type="image" src="img/delete.png" widht="30" height="30"/>
+                        </form>
+                    </td>
                 </tr>
                 <%
                             }

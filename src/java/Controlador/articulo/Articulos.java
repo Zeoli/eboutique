@@ -2,6 +2,7 @@ package Controlador.articulo;
 
 import Modelo.articulo.Articulo;
 import Modelo.articulo.ArticuloDB;
+import Modelo.stock.StockDB;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -56,10 +57,10 @@ public class Articulos extends HttpServlet {
         boolean rpta = ArticuloDB.insertarArticulo(r);
         if (rpta) {
             //Si inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=Se registro del producto de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
             //Si no se inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=No se registro el producto");
+            response.sendRedirect("articulos.jsp");
         }
     }
     //Metodo que sirve para actualizar un producto
@@ -74,21 +75,22 @@ public class Articulos extends HttpServlet {
         r.setCategoria(Integer.parseInt(request.getParameter("txtCategoria")));
         boolean rpta = ArticuloDB.actualizarArticulo(r);
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se actualizo el producto");
+            response.sendRedirect("articulos.jsp");
         }
     }
     
     private void eliminarArticulo (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Articulo rol = new Articulo();
-        rol.setId(Integer.parseInt(request.getParameter("txtCodigo")));
+        rol.setId(Integer.parseInt(request.getParameter("id")));
+        boolean d = StockDB.eliminarStock(rol.getId());
         boolean rpta = ArticuloDB.eliminarArticulo(rol.getId());
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se elimino correctamente la categoria");
+            response.sendRedirect("articulos.jsp");
         }
     }
 

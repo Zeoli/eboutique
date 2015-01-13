@@ -52,10 +52,10 @@ public class category extends HttpServlet {
         boolean rpta = CategoriaDB.insertarCategoria(r);
         if (rpta) {
             //Si inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=Se registro del producto de manera correcta");
+            response.sendRedirect("category.jsp");
         } else {
             //Si no se inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=No se registro el producto");
+            response.sendRedirect("category.jsp");
         }
     }
     //Metodo que sirve para actualizar un producto
@@ -66,21 +66,21 @@ public class category extends HttpServlet {
         r.setNombre(request.getParameter("txtNombre"));
         boolean rpta = CategoriaDB.actualizarCategoria(r);
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
+            response.sendRedirect("category.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se actualizo el producto");
+            response.sendRedirect("category.jsp");
         }
     }
     
     private void eliminarCategoria (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Categoria rol = new Categoria();
-        rol.setId(Integer.parseInt(request.getParameter("txtCodigo")));
+        rol.setId(Integer.parseInt(request.getParameter("id")));
         boolean rpta = CategoriaDB.eliminarCategoria(rol.getId());
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
+            response.sendRedirect("category.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se elimino correctamente la categoria");
+            response.sendRedirect("category.jsp");
         }
     }
 

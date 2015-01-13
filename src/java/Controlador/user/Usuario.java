@@ -59,10 +59,10 @@ public class Usuario extends HttpServlet {
         boolean rpta = UserDB.insertarUsuario(r);
         if (rpta) {
             //Si inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=Se registro del producto de manera correcta");
+            response.sendRedirect("users.jsp");
         } else {
             //Si no se inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=No se registro el producto");
+            response.sendRedirect("users.jsp");
         }
     }
     //Metodo que sirve para actualizar un producto
@@ -80,21 +80,21 @@ public class Usuario extends HttpServlet {
         r.setRol(Integer.parseInt(request.getParameter("txtRol")));
         boolean rpta = UserDB.actualizarUser(r);
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
+            response.sendRedirect("users.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se actualizo el producto");
+            response.sendRedirect("users.jsp");
         }
     }
     
     private void eliminarUsuario (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         User rol = new User();
-        rol.setId(Integer.parseInt(request.getParameter("txtCodigo")));
+        rol.setId(Integer.parseInt(request.getParameter("id")));
         boolean rpta = UserDB.eliminarUser(rol.getId());
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
+            response.sendRedirect("users.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se elimino correctamente la categoria");
+            response.sendRedirect("users.jsp");
         }
     }
 

@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador.Sesiones;
+package Controlador.carrito;
 
-import Modelo.user.User;
-import Modelo.user.UserDB;
+import Modelo.articulo.Articulo;
+import Modelo.articulo.ArticuloDB;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Lety
  */
-public class Sesiones extends HttpServlet {
+public class Carrito extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -67,27 +68,28 @@ public class Sesiones extends HttpServlet {
         //debemos hacer
         String accion = request.getParameter("accion");
         switch (accion) {
-            case "IniciarSesion":
+            case "Agregar":
             
-                this.iniciar(request, response);
+                this.agregar(request, response);
                 break;
             
         }
 
     }
     //Metodo que sirve para actualizar un producto
-    private void iniciar(HttpServletRequest request, HttpServletResponse response)
+    private void agregar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion= request.getSession();
-        String user, passw;
-        user= request.getParameter("usuario");
-        passw = request.getParameter("password");
-        User usuario = UserDB.obtenerUserName(user);
-        if (user.equals(usuario.getUsername()) && passw.equals(usuario.getPassword()) ) {
-            sesion.setAttribute("usuario", usuario.getUsername());
-            response.sendRedirect("principal.jsp");
+        String id = request.getParameter("id");
+        Articulo articulo = ArticuloDB.obtenerArticulo(Integer.parseInt(id));
+        if (sesion.getAttribute("carritoArticulo") == null){
+            sesion.setAttribute("carritoArticulo", articulo.getNombre());
+            sesion.setAttribute("carritoPrecio", articulo.getPrecio());
+        }
+        if (sesion.getAttribute("carritoArticulo") != null) {
+            response.sendRedirect("carrito.jsp?men=si");
         } else {
-            response.sendRedirect("principal.jsp");
+            response.sendRedirect("carrito.jsp?men=no");
         }
     }
     

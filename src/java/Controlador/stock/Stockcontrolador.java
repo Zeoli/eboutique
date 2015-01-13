@@ -53,10 +53,10 @@ public class Stockcontrolador extends HttpServlet {
         boolean rpta = StockDB.insertarStock(r);
         if (rpta) {
             //Si inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=Se registro del producto de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
             //Si no se inserto lo redireccionamos a otra pagina que se llama "mensaje.jsp"
-            response.sendRedirect("mensaje.jsp?men=No se registro el producto");
+            response.sendRedirect("articulos.jsp");
         }
     }
     //Metodo que sirve para actualizar un producto
@@ -67,9 +67,9 @@ public class Stockcontrolador extends HttpServlet {
         r.setCantidad(Integer.parseInt(request.getParameter("txtCantidad")));
         boolean rpta = StockDB.actualizarStock(r);
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se actualizo el producto de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se actualizo el producto");
+            response.sendRedirect("articulos.jsp");
         }
     }
     
@@ -79,9 +79,9 @@ public class Stockcontrolador extends HttpServlet {
         rol.setId(Integer.parseInt(request.getParameter("txtCodigo")));
         boolean rpta = StockDB.eliminarStock(rol.getId());
         if (rpta) {
-            response.sendRedirect("mensaje.jsp?men=Se elimino la categoria de manera correcta");
+            response.sendRedirect("articulos.jsp");
         } else {
-            response.sendRedirect("mensaje.jsp?men=No se elimino correctamente la categoria");
+            response.sendRedirect("articulos.jsp");
         }
     }
 
